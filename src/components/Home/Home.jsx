@@ -1,15 +1,13 @@
-import './Home.scss';
 import { Linear, gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import './Home.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const homeImgRef = useRef(null);
   const homePatternRef = useRef(null);
   const homeInfoRef = useRef(null);
-  const homeConRef = useRef(null);
   const homeInfoBoxRef = useRef(null);
 
   useEffect(() => {
@@ -18,33 +16,34 @@ const Home = () => {
     const img = homeImgRef.current;
     const infoBox = homeInfoBoxRef.current;
     const info = homeInfoRef.current;
-    const container = homeConRef.current;
 
-    //  START
+    //  ENTER ANIME
     tl.fromTo(pattern, {y: -1500}, {y: 0, duration: 1.5, ease:Linear.easeNone})
     .fromTo(img, {x: "100%", opacity: 0}, {x: 0, opacity: 1, duration: 1.5, ease:Linear.easeNone})
     .fromTo(info, {y: "300%", opacity: 0}, {y: 0, opacity: 1, duration: 1.5, ease:Linear.easeNone}, "<")
 
-    gsap.fromTo([infoBox, pattern], {x:0, y:0}, {x: 1500, y: 1100, ease:Linear.easeNone,
+    //  EXIT ANIME
+    gsap.fromTo([infoBox, pattern], {x: 0, y: 0}, {x: 1500, y: 1100, ease:Linear.easeNone,
       scrollTrigger: {
         trigger: "#about",
         scrub: true,
         markers: false,
+        invalidateOnRefresh: true
     }})
-
-    gsap.fromTo(img, {y:0}, {y: '70%', ease:Linear.easeNone,
+    gsap.fromTo(img, {y: 0}, {y: '70%', ease:Linear.easeNone,
       scrollTrigger: {
         trigger: "#about",
         scrub: true,
         markers: false,
+        invalidateOnRefresh: true
     }})
   }, []);
 
   return(
     <div id='home' className='home__wrapper'>
-      <div className='home__container' ref={homeConRef}>
+      <div className='home__container'>
         <div className='home__left'>
-          <img src={process.env.PUBLIC_URL + '/assets/photos/photo1.webp'} ref={homeImgRef}/>
+          <img src={process.env.PUBLIC_URL + '/assets/photos/photo1.webp'} ref={homeImgRef} alt='main'/>
         </div>
         <div className='home__pattern' ref={homePatternRef}></div>
         <div className='home__right' ref={homeInfoBoxRef}>

@@ -10,6 +10,7 @@
 
 # production
 /build
+/.vscode
 alyrak.woff
 alyrak.woff2
 alyrak.ttf

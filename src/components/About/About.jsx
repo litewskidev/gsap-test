@@ -1,12 +1,10 @@
-import './About.scss';
 import { Linear, gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import './About.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-
   const aboutImageRef = useRef(null);
   const aboutScreenRef = useRef(null);
   const imageTriggerRef = useRef(null);
@@ -26,36 +24,40 @@ const About = () => {
     tl.to(screen, {
       scrollTrigger: {
         trigger: imgTrigger,
-        scrub: 0.1,
+        scrub: true,
         markers: false,
         start: "top 80%",
         end: "top",
-        toggleClass: {targets: ".about__screen__off", className: "off"}
+        toggleClass: {targets: ".about__screen__off", className: "off"},
+        invalidateOnRefresh: true
       }
-    }).fromTo(img, {scale: 1, y: 0, x:0, rotate: 0}, {scale: 8, y: '230%', x: "10%", rotate: "15deg", ease:Linear.easeNone,
+    }).fromTo(img, {scale: 1, y: 0, x: 0, rotate: 0}, {scale: 8, y: '230%', x: "10%", rotate: "15deg", ease:Linear.easeNone,
       scrollTrigger: {
         trigger: infoTrigger,
-        scrub: 0.1,
+        scrub: true,
         markers: false,
         start: "top center",
-        end: "top"
-    }
+        end: "top",
+        invalidateOnRefresh: true
+      }
     }).fromTo(screen, {opacity: 1}, {opacity: 0, ease:Linear.easeNone,
       scrollTrigger: {
         trigger: infoTrigger,
-        scrub: 0.1,
+        scrub: true,
         markers: false,
         start: "top 40%",
-        end: "top"
-    }
-    }).to(img, {opacity:0, ease:Linear.easeNone,
+        end: "top",
+        invalidateOnRefresh: true
+      }
+    }).to(img, {opacity: 0, ease:Linear.easeNone,
       scrollTrigger: {
         trigger: screenTrigger,
-        scrub: 0.1,
-        markers: true,
+        scrub: true,
+        markers: false,
         start: "top 88%",
         end: "top 88%",
-    }
+        invalidateOnRefresh: true
+      }
     })
   }, []);
 

@@ -2,13 +2,6 @@
 
 .navbar__wrapper {
   position: fixed;
-  z-index: 999;
-  background-color: $night;
-  width: 100%;
-}
-
-.navbar__wrapper {
-  position: sticky;
   top: 0;
   width: 100%;
   display: flex;
@@ -97,6 +90,7 @@
 }
 
 @media (max-width: 540px) {
+
   .navbar__wrapper {
     padding: 0.5rem 1rem;
   }

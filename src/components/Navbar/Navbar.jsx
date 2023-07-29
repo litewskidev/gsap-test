@@ -2,7 +2,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
   return(
-    <div className='navbar__wrapper'>
+    <div className='navbar__wrapper' id='navbar'>
       <div className='navbar__logo'>
         <img src={process.env.PUBLIC_URL + '/assets/logo/terminal-solid.svg'} alt='logo'/>
       </div>
