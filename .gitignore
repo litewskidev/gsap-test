@@ -10,6 +10,9 @@
 
 # production
 /build
+alyrak.woff
+alyrak.woff2
+alyrak.ttf
 
 # misc
 .DS_Store

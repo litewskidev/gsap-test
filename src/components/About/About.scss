@@ -1,0 +1,109 @@
+@import '../../styles/settings.scss';
+
+.about__container {
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  background-color: $night;
+}
+
+.about__info {
+  width: 50%;
+  z-index: 1;
+
+  p {
+    font-size: 2.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+  }
+}
+
+.about__image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  filter: brightness(0.9);
+  z-index: 2;
+
+  .about__table {
+    position: absolute;
+    bottom: -10%;
+    height: 55%;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .about__monitor {
+    max-height: 60vh;
+    z-index: 3;
+    margin-bottom: 5rem;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 1);
+  }
+
+  .about__screen__off {
+    position: absolute;
+    top: 5%;
+    max-height: 68%;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .about__screen__on {
+    position: absolute;
+    top: 5%;
+    max-height: 65%;
+    z-index: 2;
+    opacity: 0;
+
+    &.on {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .about__container {
+    padding-top: 5rem;
+    gap: 4rem;
+  }
+
+  .about__info {
+    width: 90%;
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .about__image {
+
+    .about__table {
+      height: 55%;
+    }
+
+    .about__monitor {
+      max-height: 40vh;
+      margin-bottom: 5rem;
+    }
+
+    .about__screen__off {
+      top: 5%;
+      max-height: 55%;
+    }
+
+    .about__screen__on {
+      top: 5%;
+      max-height: 50%;
+    }
+  }
+}
