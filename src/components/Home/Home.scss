@@ -20,11 +20,12 @@
 .home__left {
   width: 50%;
   position: absolute;
-  left: 20%;
+  left: 21%;
   background-color: $eerie-black;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 
   img {
     min-height: 100%;
@@ -39,7 +40,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: 2;
+  z-index: 3;
 }
 
 .home__right {
@@ -50,6 +51,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  z-index: 3;
 
   h1 {
     font-size: 15rem;

@@ -9,13 +9,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10rem;
+  gap: 40rem;
   background-color: $night;
 }
 
 .about__info {
   width: 50%;
   z-index: 1;
+  text-align: center;
+  background-color: $eerie-black;
+  padding: 2rem;
+  border: 1px solid white;
 
   p {
     font-size: 2.9rem;
@@ -44,7 +48,7 @@
 
   .about__monitor {
     max-height: 60vh;
-    z-index: 3;
+    z-index: 4;
     margin-bottom: 5rem;
     box-shadow: 0 100px 100px rgba(0, 0, 0, 1);
   }
@@ -52,28 +56,28 @@
   .about__screen__off {
     position: absolute;
     top: 5%;
-    max-height: 68%;
-    z-index: 1;
+    max-height: 60%;
+    z-index: 3;
     opacity: 1;
+
+    &.off {
+      opacity: 0;
+    }
   }
 
   .about__screen__on {
     position: absolute;
     top: 5%;
-    max-height: 65%;
+    max-height: 60%;
     z-index: 2;
-    opacity: 0;
-
-    &.on {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
 
 @media (max-width: 540px) {
   .about__container {
     padding-top: 5rem;
-    gap: 4rem;
+    gap: 23rem;
   }
 
   .about__info {

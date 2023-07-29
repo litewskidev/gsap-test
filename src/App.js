@@ -12,7 +12,7 @@ function App() {
   }, [])
 
   return (
-    <main>
+    <main className="main">
       <Navbar />
       <Routes>
         <Route exact path="/" element={ <Content /> } />

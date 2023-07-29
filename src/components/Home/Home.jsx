@@ -1,5 +1,5 @@
 import './Home.scss';
-import { gsap } from 'gsap';
+import { Linear, gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
 import { useRef } from 'react';
@@ -21,18 +21,18 @@ const Home = () => {
     const container = homeConRef.current;
 
     //  START
-    tl.fromTo(pattern, {y: -1500}, {y: 0, duration: 2})
-    .fromTo(img, {x: 1200, opacity: 0}, {x: 0, opacity: 1, duration: 2})
-    .fromTo(info, {y: 1200, opacity: 0}, {y: 0, opacity: 1, duration: 2}, "<")
+    tl.fromTo(pattern, {y: -1500}, {y: 0, duration: 1.5, ease:Linear.easeNone})
+    .fromTo(img, {x: "100%", opacity: 0}, {x: 0, opacity: 1, duration: 1.5, ease:Linear.easeNone})
+    .fromTo(info, {y: "300%", opacity: 0}, {y: 0, opacity: 1, duration: 1.5, ease:Linear.easeNone}, "<")
 
-    gsap.fromTo([infoBox, pattern], {x:0, y:0}, {x: 1500, y: 1100,
+    gsap.fromTo([infoBox, pattern], {x:0, y:0}, {x: 1500, y: 1100, ease:Linear.easeNone,
       scrollTrigger: {
         trigger: "#about",
         scrub: true,
         markers: false,
     }})
 
-    gsap.fromTo(img, {y:0}, {y: 1100,
+    gsap.fromTo(img, {y:0}, {y: '70%', ease:Linear.easeNone,
       scrollTrigger: {
         trigger: "#about",
         scrub: true,
