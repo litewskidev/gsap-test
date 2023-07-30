@@ -1,0 +1,17 @@
+@import '../../styles/settings.scss';
+
+.navbar__bottom__container {
+  background-color: $night;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  p {
+    font-family: $font-retro-text;
+    color: $dark-slate-gray-2;
+    font-size: 1.2rem;
+    font-weight: 100;
+    filter: brightness(1.3);
+  }
+}

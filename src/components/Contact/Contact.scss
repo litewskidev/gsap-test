@@ -1,0 +1,94 @@
+@import '../../styles/settings.scss';
+
+.contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding-top: 10rem;
+  min-height: 100vh;
+  background-color: rgba(182, 76, 57, 0.5);
+
+  h1 {
+    border-bottom: 1px dotted red;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 200;
+  }
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 10rem;
+  position: relative;
+
+  button {
+    background-color: inherit;
+    border: 1px dotted $lynx-white;
+    color: $lynx-white;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem 3rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 90%;
+    position: absolute;
+    top: 6rem;
+    z-index: 0;
+  }
+}
+
+.contact__form__text, .contact__form__message {
+  font-family: $font-text;
+  font-size: 1rem;
+  font-weight: 200;
+  width: 70%;
+  border-radius: 0.2rem;
+  border: 1px dotted $persian-red;
+  border-bottom: 1px dotted $lynx-white;
+  outline: none;
+  padding: 0.1rem 0.5rem;
+  background: inherit;
+  color: $lynx-white;
+
+  &::placeholder {
+    color: $lynx-white;
+    opacity: 0.4;
+  }
+}
+
+.contact__form__message {
+  margin-top: 3.2rem;
+  width: 67%;
+  padding-bottom: 11rem;
+  z-index: 1;
+}
+
+.contact__back__arrow {
+  padding-bottom: 2rem;
+  img {
+    width: 2rem;
+    filter: invert(1);
+    transform: rotate(-90deg);
+  }
+}

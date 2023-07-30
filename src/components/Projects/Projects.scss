@@ -4,7 +4,7 @@
   min-height: 100vh;
   overflow: hidden;
   background-color: $night;
-  padding-top: 10rem;
+  padding-top: 17rem;
 }
 
 .projects__title__box {
@@ -13,8 +13,8 @@
   h1 {
     position: absolute;
     top: 5rem;
-    left: 2.5rem;
-    font-size: 8.5rem;
+    left: 30%;
+    font-size: 27rem;
     font-weight: 100;
     color: $copper;
     z-index: 2;
@@ -23,7 +23,35 @@
   img {
     position: absolute;
     top: 6rem;
-    width: 150%;
+    left: 20%;
+    width: 70%;
+    z-index: 3;
+    opacity: 0.9;
+  }
+
+  img:last-of-type {
     z-index: 1;
+  }
+}
+
+@media (max-width: 540px) {
+  #projects {
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: 12rem;
+  }
+
+  .projects__title__box {
+    h1 {
+      top: 4rem;
+      left: 10%;
+      font-size: 8rem;
+    }
+
+    img {
+      top: 6rem;
+      left: 15%;
+      width: 100%;
+    }
   }
 }

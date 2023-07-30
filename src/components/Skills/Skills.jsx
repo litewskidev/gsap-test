@@ -1,25 +1,29 @@
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
+import { Linear, gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Skills.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
+  const skillsContainerRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(".skills__box", {scale: 0, opacity: 0}, { scale: 1, opacity: 1, duration: 1, ease: "power1.inOut",
+    const skillsContainer = skillsContainerRef.current;
+
+    gsap.fromTo(".skills__box", {scale: 0, opacity: 0}, { scale: 1, opacity: 1, duration: 1, ease:Linear.easeNone,
       stagger: {
-        grid: [7,15],
         from: "start",
-        axis: null,
-        amount: 1.5
+        axis: "x",
+        amount: 1.5,
+        ease: Linear.easeNone
       },
       scrollTrigger: {
-        trigger: ".skills__container",
+        trigger: skillsContainer,
         scrub: true,
-        start: "top bottom",
-        end: "top 20%",
-        markers: false
+        start: "top 95%",
+        end: "top 50%",
+        markers: false,
+        ease:Linear.easeNone
       }
     });
   }, [])
@@ -27,7 +31,7 @@ const Skills = () => {
   return(
     <div id='skills'>
       <h1>SKILLS</h1>
-      <div className='skills__container'>
+      <div className='skills__container' ref={skillsContainerRef}>
         <div className='skills__box'>
           <img src={process.env.PUBLIC_URL + '/assets/skills/js.svg'} alt="JavaScript" />
           <p>JavaScript</p>

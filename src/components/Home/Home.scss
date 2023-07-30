@@ -20,7 +20,7 @@
 .home__left {
   width: 50%;
   position: absolute;
-  left: 21%;
+  left: 29%;
   background-color: $eerie-black;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
 
   img {
     min-height: 100%;
-    filter: contrast(1.2) brightness(1) saturate(0.9);
+    filter: contrast(1.5) brightness(0.8) saturate(0.8);
   }
 }
 
@@ -59,7 +59,7 @@
     font-weight: 200;
     margin-left: 2rem;
     opacity: 0;
-    color: $jasper;
+    color: $persian-red;
     line-height: 12.5rem;
   }
 }
@@ -72,7 +72,7 @@
 
   .home__left {
     img {
-      max-height: 150vh;
+      max-height: 130vh;
     }
   }
 
