@@ -1,6 +1,22 @@
+import { Linear, gsap } from 'gsap';
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './AboutSecond.scss';
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutSecond = () => {
+
+  useEffect(() => {
+    gsap.fromTo(".about__second__qr", {y: 300, opacity: 0}, {y: 0, opacity: 1, ease:Linear.easeNone,
+      scrollTrigger: {
+        trigger: ".about__second__qr",
+        scrub: true,
+        start: "top bottom",
+        end: "top 85%"
+      }
+    });
+  }, []);
+
   return (
     <div id='about-second' className='about__second__wrapper'>
       <div className='about__second__info'>

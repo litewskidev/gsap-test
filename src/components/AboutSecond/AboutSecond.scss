@@ -1,8 +1,12 @@
 @import '../../styles/settings.scss';
 
+#about-second {
+  z-index: 6;
+}
+
 .about__second__wrapper {
   display: flex;
-  min-height: 60vh;
+  min-height: 0;
   position: relative;
 }
 
@@ -83,6 +87,7 @@
 @media (max-width: 540px) {
   .about__second__wrapper {
     flex-direction: column;
+    min-height: 50vh;
   }
 
   .about__second__info {
@@ -91,8 +96,17 @@
 
     p {
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.3rem;
       line-height: 1.5rem;
+      filter: brightness(1.2);
+      text-shadow: 1px 1px 1px black;
     }
   }
+
+
+.about__second__image {
+  img:last-of-type {
+    opacity: 0.3;
+  }
+}
 }

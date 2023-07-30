@@ -67,7 +67,21 @@ const About = () => {
         end: "top",
         pin: [".about__info__text left", ".about__info__text right"]
       }
-    })
+    }).fromTo(".about__info__text.right", {x: "100%"}, {x: 0, ease:Linear.easeNone,
+      scrollTrigger: {
+        trigger: ".discs__trigger",
+      start: "top bottom",
+      end: "top center",
+      scrub: true
+    }
+    }).fromTo(".about__info__text.left", {x: "-100%"}, {x: 0, ease:Linear.easeNone,
+      scrollTrigger: {
+        trigger: ".discs__trigger",
+      start: "top bottom",
+      end: "top center",
+      scrub: true
+    }
+    }, "<")
   }, []);
 
   return(
@@ -90,15 +104,18 @@ const About = () => {
           <div id='screen-trigger' ref={screenTriggerRef}></div>
           <div className='about__info__container' ref={aboutInfoRef}>
             <div className='about__info__text left'>
-              <p>My adventure with programming began about a year ago. Over time, it turned into a real passion. I love writing code and I strive to be able to devote as much time to it as possible.</p>
+              <p>I create web applications using React and JSES6. Always care about clear code, cool design, responsiveness and user experience.</p>
+              <img src={process.env.PUBLIC_URL + '/assets/images/overlay.png'}/>
             </div>
             <div className='about__info__header'>
               <img src={process.env.PUBLIC_URL + '/assets/images/hand.png'} alt='metal hand'/>
               <p>ABOUT</p>
             </div>
             <div className='about__info__text right'>
-              <p>I create web applications using React and JSES6. Always care about clear code, cool design, responsiveness and user experience.</p>
+              <p>My adventure with programming began about a year ago. Over time, it turned into a real passion. I love writing code and I strive to be able to devote as much time to it as possible.</p>
+              <img src={process.env.PUBLIC_URL + '/assets/images/overlay.png'}/>
             </div>
+            <div className='discs__trigger'></div>
           </div>
         </div>
       </div>

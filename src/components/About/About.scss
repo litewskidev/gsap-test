@@ -2,7 +2,7 @@
 
 .about__container {
   padding-top: 15rem;
-  padding-bottom: 10rem;
+  padding-bottom: 15rem;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -141,6 +141,7 @@
   text-align: start;
   display: flex;
   min-width: 100%;
+  position: relative;
 
   p {
     border-radius: 20rem;
@@ -151,6 +152,14 @@
     letter-spacing: 0.1rem;
     font-weight: 100;
     font-family: $font-text;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    opacity: 0.5;
+    filter: invert(0.1);
   }
 
   &.left {
@@ -222,12 +231,13 @@
       z-index: 1;
       margin: 0 -20rem;
       letter-spacing: 1rem;
+      opacity: 0.9;
     }
   }
 
   .about__info__text {
-    background-color: $eerie-black;
-    border-radius: 20rem;
+    background-color: $dark-slate-gray-2;
+    border-radius: 12rem;
     border: 1px solid $jasper;
     text-align: start;
     display: flex;
@@ -236,18 +246,22 @@
     padding: 10%;
 
     p {
-      border-radius: 20rem;
+      border-radius: 12rem;
       max-width: 60%;
-      padding: 10%;
-      font-size: 1rem;
+      padding: 12%;
+      font-size: 1.1rem;
       line-height: 1.1rem;
       letter-spacing: 0.1rem;
       font-weight: 100;
       font-family: $font-text;
+      text-shadow: 0 0 1px black;
+      opacity: 0.9;
     }
 
     &.left {
       justify-content: end;
+      opacity: 0;
+      min-width: 90%;
     }
   }
 }

@@ -12,8 +12,8 @@ const Projects = () => {
       trigger: ".projects__title__box",
       scrub: true,
       markers: false,
-      start: "top bottom",
-      end: "top 10%"
+      start: "top center",
+      end: "top 20%"
     }
   })
   }, [])
