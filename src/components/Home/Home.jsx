@@ -47,7 +47,7 @@ const Home = () => {
         </div>
         <div className='home__pattern' ref={homePatternRef}></div>
         <div className='home__right' ref={homeInfoBoxRef}>
-          <h1 ref={homeInfoRef}>HI<br />I'M<br />ADRIAN</h1>
+          <h1 ref={homeInfoRef}>HI<br />I'M<br />ADR<br />IAN</h1>
         </div>
       </div>
     </div>

@@ -13,29 +13,14 @@
   background-color: $night;
 }
 
-.about__info {
-  width: 50%;
-  z-index: 1;
-  text-align: center;
-  background-color: $eerie-black;
-  padding: 2rem;
-  border: 1px solid white;
-
-  p {
-    font-size: 2.9rem;
-    letter-spacing: 0.1rem;
-    font-weight: 100;
-  }
-}
-
 .about__image {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
-  filter: brightness(0.9);
+  filter: brightness(0.9) saturate(0.8);
   z-index: 2;
 
   .about__table {
@@ -49,16 +34,17 @@
   .about__monitor {
     max-height: 60vh;
     z-index: 4;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
     box-shadow: 0 100px 100px rgba(0, 0, 0, 1);
   }
 
   .about__screen__off {
     position: absolute;
     top: 5%;
-    max-height: 60%;
+    max-height: 55%;
     z-index: 3;
     opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 
     &.off {
       opacity: 0;
@@ -68,26 +54,109 @@
   .about__screen__on {
     position: absolute;
     top: 5%;
-    max-height: 60%;
+    max-height: 55%;
     z-index: 2;
     opacity: 1;
+  }
+
+  .about__screen__info {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.off {
+      opacity: 1;
+    }
+
+    p {
+      font-size: 2rem;
+      font-family: $font-retro-text;
+      color: $cambridge-blue;
+    }
+
+    .about__screen__square {
+      margin-top: 0.14rem;
+      background-color: $cambridge-blue;
+      width: 0.8rem;
+      height: 1.3rem;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0%{opacity: 0;}
+      50%{opacity: .5;}
+      100%{opacity: 1;}
+    }
+  }
+}
+
+.about__info__container {
+  margin-top: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10%;
+
+  img {
+    width: 200%;
+    position: absolute;
+    transform: rotate(90deg);
+    bottom: 1rem;
+    left: -17rem;
+    z-index: 1;
+  }
+}
+
+.about__info__header {
+  position: relative;
+  p {
+    transform: rotate(270deg);
+    font-size: 30rem;
+    color: $jasper;
+    line-height: 0;
+    margin: 0 -10rem;
+  }
+}
+
+.about__info__text {
+  background-color: $dark-slate-gray-2;
+  border-radius: 20rem;
+  border: 1px solid $jasper;
+  text-align: start;
+  display: flex;
+  min-width: 100%;
+
+  p {
+    border-radius: 20rem;
+    max-width: 50%;
+    padding: 10%;
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+    font-family: $font-text;
+  }
+
+  &.left {
+    justify-content: end;
   }
 }
 
 @media (max-width: 540px) {
 
   .about__container {
-    padding-top: 5rem;
+    padding-top: 10rem;
     gap: 23rem;
   }
 
   .about__info {
-    width: 90%;
-    text-align: center;
-
-    p {
-      font-size: 1.5rem;
-    }
+    width: 100%;
   }
 
   .about__image {
@@ -108,6 +177,67 @@
     .about__screen__on {
       top: 5%;
       max-height: 50%;
+    }
+
+    .about__screen__info {
+      p {
+        font-size: 1rem;
+      }
+
+      .about__screen__square {
+        margin-top: 0rem;
+        width: 0.4rem;
+        height: 0.7rem;
+      }
+    }
+  }
+
+  .about__info__container {
+    margin-top: 70rem;
+    padding: 0 1%;
+
+    img {
+      width: 10000%;
+      position: absolute;
+      transform: rotate(90deg);
+      bottom: 7.5rem;
+      left: -15rem;
+      z-index: 1;
+    }
+  }
+
+  .about__info__header {
+    p {
+      font-size: 20rem;
+      z-index: 1;
+      margin: 0 -20rem;
+      letter-spacing: 1rem;
+    }
+  }
+
+  .about__info__text {
+    background-color: $eerie-black;
+    border-radius: 20rem;
+    border: 1px solid $jasper;
+    text-align: start;
+    display: flex;
+    min-width: 100%;
+    z-index: 1;
+    padding: 10%;
+
+    p {
+      border-radius: 20rem;
+      max-width: 60%;
+      padding: 10%;
+      font-size: 1rem;
+      line-height: 1.1rem;
+      letter-spacing: 0.1rem;
+      font-weight: 100;
+      font-family: $font-text;
+    }
+
+    &.left {
+      justify-content: end;
     }
   }
 }

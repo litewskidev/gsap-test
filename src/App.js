@@ -9,7 +9,7 @@ const App = () => {
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     setTimeout(() => {
       document.getElementsByTagName('body')[0].style.overflow = 'visible'
-    }, 4500);
+    }, 4000);
   }, []);
 
   return (

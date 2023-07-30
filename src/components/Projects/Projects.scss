@@ -1,0 +1,27 @@
+@import '../../styles/settings.scss';
+
+#projects {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.projects__title__box {
+  position: relative;
+
+  h1 {
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    font-size: 8.5rem;
+    font-weight: 100;
+    color: $copper;
+    z-index: 2;
+  }
+
+  img {
+    position: absolute;
+    top: 6rem;
+    width: 150%;
+    z-index: 1;
+  }
+}

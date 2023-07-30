@@ -28,7 +28,7 @@ const About = () => {
         markers: false,
         start: "top 80%",
         end: "top",
-        toggleClass: {targets: ".about__screen__off", className: "off"},
+        toggleClass: {targets: [".about__screen__off", ".about__screen__info"], className: "off"},
         invalidateOnRefresh: true
       }
     }).fromTo(img, {scale: 1, y: 0, x: 0, rotate: 0}, {scale: 8, y: '230%', x: "10%", rotate: "15deg", ease:Linear.easeNone,
@@ -58,6 +58,15 @@ const About = () => {
         end: "top 88%",
         invalidateOnRefresh: true
       }
+    }).fromTo(".about__info__header", {y: -1200, opacity: 0}, {y: 0, opacity: 1, ease:Linear.easeNone,
+      scrollTrigger: {
+        trigger: ".about__info__header",
+        scrub: true,
+        markers: true,
+        start: "top 90%",
+        end: "top",
+        pin: [".about__info__text left", ".about__info__text right"]
+      }
     })
   }, []);
 
@@ -70,11 +79,26 @@ const About = () => {
           <img className='about__monitor' src={process.env.PUBLIC_URL + '/assets/images/monitor1920p.webp'} alt='monitor' />
           <img className='about__screen__off' src={process.env.PUBLIC_URL + '/assets/images/screenOff1920.webp'} alt='screen off' />
           <img className='about__screen__on' src={process.env.PUBLIC_URL + '/assets/images/screen1920.webp'} alt='screen on' ref={aboutScreenRef} />
+          <div className='about__screen__info'>
+            <p>ABOUT ME</p>
+            <div className='about__screen__square'></div>
+          </div>
           <div id='info-trigger' ref={infoTriggerRef}></div>
         </div>
-        <div className='about__info' ref={aboutInfoRef}>
+        <div className='about__info'>
           <div id='screen-trigger' ref={screenTriggerRef}></div>
-          <p>My adventure with programming began about a year ago. Over time, it turned into a real passion. I love writing code and I strive to be able to devote as much time to it as possible. I create web applications using React and JSES6. I always care about clear code, cool design, responsiveness and user experience.</p>
+          <div className='about__info__container' ref={aboutInfoRef}>
+            <div className='about__info__text left'>
+              <p>My adventure with programming began about a year ago. Over time, it turned into a real passion. I love writing code and I strive to be able to devote as much time to it as possible.</p>
+            </div>
+            <div className='about__info__header'>
+              <img src={process.env.PUBLIC_URL + '/assets/images/hand.png'} alt='metal hand'/>
+              <p>ABOUT</p>
+            </div>
+            <div className='about__info__text right'>
+              <p>I create web applications using React and JSES6. I always care about clear code, cool design, responsiveness and user experience.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
