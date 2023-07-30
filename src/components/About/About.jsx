@@ -62,7 +62,7 @@ const About = () => {
       scrollTrigger: {
         trigger: ".about__info__header",
         scrub: true,
-        markers: true,
+        markers: false,
         start: "top 90%",
         end: "top",
         pin: [".about__info__text left", ".about__info__text right"]
@@ -75,6 +75,7 @@ const About = () => {
       <div className='about__container'>
         <div className='about__image' ref={aboutImageRef}>
           <div id='image-trigger' ref={imageTriggerRef}></div>
+          <img className='about__image__overlay' src={process.env.PUBLIC_URL + '/assets/images/overlay.png'} />
           <img className='about__table' src={process.env.PUBLIC_URL + '/assets/images/table2.webp'} alt='table' />
           <img className='about__monitor' src={process.env.PUBLIC_URL + '/assets/images/monitor1920p.webp'} alt='monitor' />
           <img className='about__screen__off' src={process.env.PUBLIC_URL + '/assets/images/screenOff1920.webp'} alt='screen off' />
@@ -96,7 +97,7 @@ const About = () => {
               <p>ABOUT</p>
             </div>
             <div className='about__info__text right'>
-              <p>I create web applications using React and JSES6. I always care about clear code, cool design, responsiveness and user experience.</p>
+              <p>I create web applications using React and JSES6. Always care about clear code, cool design, responsiveness and user experience.</p>
             </div>
           </div>
         </div>

@@ -23,6 +23,16 @@
   filter: brightness(0.9) saturate(0.8);
   z-index: 2;
 
+.about__image__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.1;
+  filter: invert(1);
+  z-index: 2;
+}
+
   .about__table {
     position: absolute;
     bottom: -10%;

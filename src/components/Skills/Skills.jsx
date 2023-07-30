@@ -89,7 +89,7 @@ const Skills = () => {
           <p>VS</p>
         </div>
         <div className='skills__box'>
-          <img src={process.env.PUBLIC_URL + '/assets/skills/figma.svg'} alt="Figma" />
+          <img src={process.env.PUBLIC_URL + '/assets/skills/greensock.svg'} alt="GSAP" />
           <p>GSAP</p>
         </div>
       </div>
